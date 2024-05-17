@@ -82,14 +82,36 @@ def palavra(assunto, nivel):
              'dificil': ['azul-celeste', 'verde-floresta', 'vermelho-rubi', 'verde-esmeralda', 
                          'amarelo-topázio', 'roxo-ametista', 'branco-pérola', 'preto-carvão']}
     
-    objetos = {'facil': ['laranja', 'amarelo', 'verde', 'azul', 'anil', 'violeta', 'branco', 
-                         'preto', 'cinza', 'marrom', 'rosa', 'roxo', 'ciano', 'magenta', 
-                         'lima', 'teal', 'prata', 'ouro', 'bronze', 'marfim', 'navy', 
-                         'vinho', 'oliva', 'salmão', 'lavanda', 'pêssego', 'ameixa', 'bege'], 
-               'medio': ['vermelho', 'turquesa', 'azul-safira', 'verde-jade'], 
-               'dificil': ['azul-celeste', 'verde-floresta', 'vermelho-rubi', 'verde-esmeralda', 
-                           
-                           'amarelo-topázio', 'roxo-ametista', 'branco-pérola', 'preto-carvão']}
+    objetos = {'facil': ['cadeira', 'mesa', 'sofa', 'estante', 'fogao', 'celular', 'tablet', 
+                         'teclado', 'mouse', 'carro', 'moto', 'aviao', 'navio', 'barco',
+                           'berco', 'abajur', 'espelho', 'quadro', 'camera', 'relogio', 
+                           'mochila', 'bolsa', 'chave', 'livro', 'revista', 'jornal', 
+                           'caneta', 'lapis', 'caderno', 'agenda', 'pincel', 'tinta', 
+                           'toalha', 'pente', 'shampoo', 'forno', 'panela', 'prato', 
+                           'copo', 'talher', 'garrafa', 'sacola', 'caixa', 'martelo', 
+                           'prego', 'serrote', 'escada', 'cadeado', 'tesoura', 'agulha',
+                           'linha', 'botao', 'fita', 'tesoura', 'vela', 'balde', 'esponja', 
+                           'rodo', 'pia', 'abajur', 'escada', 'bussola', 'estojo', 'lupa',
+                             'tear', 'trena', 'cabide', 'varal', 'piscina', 'cortina', 'porta',
+                               'janela', 'celular', 'camera', 'lixeira', 'cama', 'comoda', 'armario',
+                                 'cadeira', 'sofa', 'tapete', 'espelho', 'lustre', 'abajur', 'abajur',
+                                   'estante', 'cortina', 'tapete', 'comoda', 'espelho'], 
+               'medio': ['televisao', 'geladeira', 'microondas', 'computador', 'bicicleta', 'helicoptero', 
+                         'luminaria', 'carteira', 'sabonete', 'parafuso', 'lixadeira', 'chaveiro',
+                           'borracha', 'canivete', 'isqueiro', 'vassoura', 'detergente', 'torneira', 
+                           'mangueira', 'escorredor', 'cinzeiro', 'ventilador', 'grampeador', 'binoculo', 
+                           'lava-loucas', 'apontador', 'projetor', 'radiador', 'telefone', 'almofada', 
+                           'cobertor', 'travesseiro', 'criado-mudo', 'cabideiro', 'sapateira', 'poltrona',
+                             'luminaria', 'porta-lapis', 'prateleira', 'jardineira'], 
+               'dificil': ['liquidificador', 'aspirador-de-po', 'fones-de-ouvido', 'carrinho-de-bebe', 
+                           'culos-de-sol', 'folha-de-papel', 'escova-de-dente', 'pasta-de-dente',
+                             'condicionador', 'gel-de-cabelo', 'secador-de-cabelo', 'abridor-de-latas',
+                               'chave-de-fenda', 'fita-adesiva', 'fita-metrica', 'papel-higienico', 
+                               'escova-de-lavar', 'desinfetante', 'vaso-sanitario', 'escorredor-de-pratos', 
+                               'maquina-de-escrever', 'maquina-de-lavar', 'maquina-de-coser', 'churrasqueira',
+                                 'guarda-chuva', 'quadro-branco', 'caixa-de-correio', 'mesinha-de-cabeceira', 
+                                 'guarda-roupa', 'escrivaninha', 'porta-retratos', 'porta-trecos', 
+                                 'porta-retratos', 'vaso-de-flores', 'quadro-de-avisos', 'relogio-de-parede']}
 
     if assunto == 'frutas':
         return choice(frutas[nivel])

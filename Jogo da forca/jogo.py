@@ -2,42 +2,47 @@ from palavra import palavra
 from random import choice
 import time
 
-def dificuldade():
-    # verifica qual o nível de dificuldade da palavra que o jogador escolheu e
-    # retorna uma string adequada ao nivel escolhido
-    
-    para = False
-    while not para:
+
+def assunto():
+    # recolhe do jogador tema da palavra
+    while True:
         d = input('Qual o assunto [fruta/profissoes/animais/cores/objetos/paises]? ').lower()
         if d[0] == 'f':
-            assunto = 'frutas'
-            para = True
+            return 'frutas'
         elif d[:3] == 'pro':
-            assunto = 'profissoes'
-            para = True
+            return 'profissoes'
         elif d[0] == 'a':
-            assunto = 'animais'
-            para = True
+            return 'animais'
         elif d[0] == 'c':
-            assunto ='cores'
+            return 'cores'
         elif d[0] == 'o':
-            assunto = 'objetos'
+           return 'objetos'
         elif d[:3] == 'pai':
-            assunto = 'paises'
-    
-    para = False
+            return 'paises'
+
+
+
+def nivel():
+    # recolhe do jogador nível de dificuldade
     print('Muito bem, agora vamos para o nível')
-    while not para:
-        nivel = input('Qual o nível de dificuldade [facil/medio/dificil]? ')
+    while True:
+        nivel = input('Qual o nível de dificuldade [facil/medio/dificil]? ').lower()
         if nivel[0] == 'f':
-            str_escolhida = palavra(assunto, nivel)
+            return 'facil'
         elif nivel[0] == 'm':
-            str_escolhida = palavra(assunto, nivel)
+            return 'medio'
         elif nivel[0] == 'd':
-            str_escolhida = palavra(assunto, nivel)
+            return 'dificil'
 
 
-    return str_escolhida
+def dificuldade():
+    # Retorna a palavra acerca do tema e nivel escolhido
+
+    tema = assunto()
+    n = nivel()
+    palavra_escolhida = palavra(tema, n)
+
+    return palavra_escolhida
 
 
 def forca():
@@ -102,7 +107,7 @@ def main():
         print(' ')
 
     print('Até a próxima!')
-    time.sleep(3)
+    time.sleep(2)
 
 
 main()
