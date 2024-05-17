@@ -68,7 +68,8 @@ def forca():
     if acertos == len(car):
         print('PARABÉNS, você conseguiu!')
     else:
-        print(f'TENTE DA PRÓXIMA VEZ a palavra era {palavra}')
+        print('TENTE DA PRÓXIMA VEZ')
+        print(f'a palavra era {palavra}')
     print(' ')
 
 
@@ -82,7 +83,7 @@ def main():
         print(' ')
 
     print('Até a próxima!')
-    time.sleep(5)
+    time.sleep(3)
 
 
 main()
