@@ -24,7 +24,7 @@ def assunto():
 
 def nivel():
     # recolhe do jogador nível de dificuldade
-    print('Muito bem, agora vamos para o nível')
+    print('Muito bem, agora vamos para o nível: ')
     while True:
         nivel = input('Qual o nível de dificuldade [facil/medio/dificil]? ').lower()
         if nivel[0] == 'f':
@@ -98,7 +98,11 @@ def forca():
 
 
 def main():
-    print('Jogo da forca'.center(40))
+    print('Jogo da forca'.center(60))
+    print(' ')
+    a = '-'
+    print(f'Considere {a} como um espaço.')
+    print(' ')
     continuar = 's'
     while continuar == 's':
         forca()
