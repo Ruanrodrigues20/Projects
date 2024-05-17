@@ -1,6 +1,4 @@
-from bcd import facil
-from bcd import medio
-from bcd import dificil
+from palavra import palavra
 from random import choice
 
 def dificuldade():
@@ -11,18 +9,19 @@ def dificuldade():
     while not para:
         d = input('Qual o nível de dificuldade [fácil, medio, díficl]? ').lower()
         if d[0] == 'f':
-            palavra = choice(facil).lower()
+            str_escolhida = palavra('f')
             para = True
         elif d[0] == 'm':
-            palavra = choice(medio).lower()
+            str_escolhida = palavra('m')
             para = True
         elif d[0] == 'd':
-            palavra = choice(dificil).lower()
+            str_escolhida = palavra('d')
             para = True
-    return palavra
+    return str_escolhida
 
 
 def forca():
+    # jogo da forco propriamente
     palavra = dificuldade()
 
     car = [i for i in palavra]
