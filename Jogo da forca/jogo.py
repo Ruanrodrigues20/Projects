@@ -98,7 +98,7 @@ def forca():
 
 
 def main():
-    print('Jogo da forca'.center(20))
+    print('Jogo da forca'.center(40))
     continuar = 's'
     while continuar == 's':
         forca()
