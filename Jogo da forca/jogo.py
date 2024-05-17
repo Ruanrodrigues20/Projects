@@ -1,4 +1,6 @@
-from bcd import palavras
+from bcd import facil
+from bcd import medio
+from bcd import dificil
 from random import choice
 
 def dificuldade():
@@ -9,13 +11,13 @@ def dificuldade():
     while not para:
         d = input('Qual o nível de dificuldade [fácil, medio, díficl]? ').lower()
         if d[0] == 'f':
-            palavra = choice(palavras).lower()
+            palavra = choice(facil).lower()
             para = True
         elif d[0] == 'm':
-            palavra = choice(palavras).lower()
+            palavra = choice(medio).lower()
             para = True
         elif d[0] == 'd':
-            palavra = choice(palavras).lower()
+            palavra = choice(dificil).lower()
             para = True
     return palavra
 
