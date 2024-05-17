@@ -1,5 +1,6 @@
 from palavra import palavra
 from random import choice
+import time
 
 def dificuldade():
     # verifica qual o nível de dificuldade da palavra que o jogador escolheu e
@@ -81,6 +82,7 @@ def main():
         print(' ')
 
     print('Até a próxima!')
+    time.sleep(5)
 
 
 main()
