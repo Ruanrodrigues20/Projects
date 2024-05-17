@@ -69,7 +69,7 @@ def forca():
         print('PARABÉNS, você conseguiu!')
     else:
         print('TENTE DA PRÓXIMA VEZ')
-        print(f'a palavra era {palavra}')
+        print(f'A palavra era {palavra}')
     print(' ')
 
 
