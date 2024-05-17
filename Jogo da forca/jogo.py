@@ -10,20 +10,33 @@ def dificuldade():
     while not para:
         d = input('Qual o assunto [fruta/profissoes/animais/cores/objetos/paises]? ').lower()
         if d[0] == 'f':
-            str_escolhida = palavra('frutas')
+            assunto = 'frutas'
             para = True
         elif d[:3] == 'pro':
-            str_escolhida = palavra('profissoes')
+            assunto = 'profissoes'
             para = True
         elif d[0] == 'a':
-            str_escolhida = palavra('animais')
+            assunto = 'animais'
             para = True
         elif d[0] == 'c':
-            str_escolhida = palavra('cores')
+            assunto ='cores'
         elif d[0] == 'o':
-            str_escolhida = palavra('objetos')
+            assunto = 'objetos'
         elif d[:3] == 'pai':
-            str_escolhida = palavra('paises')
+            assunto = 'paises'
+    
+    para = False
+    print('Muito bem, agora vamos para o nível')
+    while not para:
+        nivel = input('Qual o nível de dificuldade [facil/medio/dificil]? ')
+        if nivel[0] == 'f':
+            str_escolhida = palavra(assunto, nivel)
+        elif nivel[0] == 'm':
+            str_escolhida = palavra(assunto, nivel)
+        elif nivel[0] == 'd':
+            str_escolhida = palavra(assunto, nivel)
+
+
     return str_escolhida
 
 

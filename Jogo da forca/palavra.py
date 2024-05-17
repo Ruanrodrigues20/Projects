@@ -3,117 +3,106 @@
 
 from random import choice
 
-def palavra(escolha):
-    frutas = [
-    'maca', 'banana', 'abacaxi', 'morango', 'uva', 'laranja', 'limao', 'mamao', 
-    'manga', 'melancia', 'melao', 'pera', 'pessego', 'ameixa', 'kiwi', 'figo', 
-    'coco', 'carambola', 'pitaya', 'tangerina', 'maracuja', 'acerola', 'goiaba', 
-    'cereja', 'roma', 'acai', 'graviola', 'jabuticaba', 'caju', 'jambo', 'damasco',
-    'framboesa', 'mirtilo', 'nectarina', 'physalis', 'uvaia', 'abiu', 'atemoia', 
-    'bacaba', 'biriba', 'caja', 'caqui', 'cupuacu', 'jaca', 'jatoba', 'longan', 
-    'mangaba', 'marolo', 'murici', 'pequi', 'pitaia', 'sapoti', 'seriguela', 
-    'taruma', 'tomate', 'umbu', 'acerola', 'abacate', 'abiu', 'açai', 'acerola', 
-    'amora', 'anona', 'banana', 'biriba', 'caju', 'caqui', 'carambola', 'caja', 
-    'cereja', 'coco', 'cupuacu', 'damasco', 'framboesa', 'figo', 'goiaba', 'graviola', 
-    'jaca', 'jambo', 'kiwi', 'laranja', 'limao', 'mamao', 'manga', 'melancia', 'melao', 
-    'morango', 'mirtilo', 'nectarina', 'pitaya', 'pessego', 'pera', 'roma', 'seriguela', 
-    'tamarindo', 'tangerina', 'umbu', 'uva'
-    ]
+def palavra(assunto, nivel):
+    frutas = {'facil': ['maca', 'banana', 'abacaxi', 'morango', 'uva', 'laranja', 'limao', 'mamao', 'manga', 'melao', 
+               'pera', 'pessego', 'ameixa', 'kiwi', 'figo', 'coco', 'pitaya', 'acerola', 'goiaba', 'cereja', 
+               'roma', 'acai', 'caju', 'jambo', 'damasco', 'mirtilo', 'uvaia', 'abiu', 'atemoia', 'bacaba', 
+               'biriba', 'caja', 'caqui', 'cupuacu', 'jaca', 'jatoba', 'longan', 'mangaba', 'marolo', 'murici', 
+               'pequi', 'pitaia', 'sapoti', 'taruma', 'tomate', 'umbu', 'acerola', 'abacate', 'abiu', 'açai', 
+               'acerola', 'amora', 'anona', 'banana', 'biriba', 'caju', 'caqui', 'caja', 'cereja', 'coco', 'cupuacu', 
+               'damasco', 'figo', 'goiaba', 'jaca', 'jambo', 'kiwi', 'laranja', 'limao', 'mamao', 'manga', 'melao', 
+               'morango', 'mirtilo', 'pitaya', 'pessego', 'pera', 'roma', 'umbu', 'uva'], 
+     'medio': ['melancia', 'carambola', 'tangerina', 'maracuja', 'graviola', 'jabuticaba', 'framboesa', 'nectarina', 
+               'physalis', 'seriguela', 'carambola', 'framboesa', 'graviola', 'melancia', 'nectarina', 'seriguela', 
+               'tamarindo', 'tangerina'], 
+     'dificil': ['tamarindo-do-amazonas', 'seriguela-de-pomba', 'sapoti-de-vinheiro', 'rambutan-vermelho', 'pitaya-branca', 
+                 'cereja-do-rio-grande', 'carambola-gigante', 'abacaxi-roxo']
+     }
 
-    profissoes = [
-    'medico', 'engenheiro', 'advogado', 'arquiteto', 'professor', 'cientista', 'programador', 'designer',
-    'enfermeiro', 'dentista', 'veterinario', 'psicologo', 'contador', 'fisioterapeuta', 'eletricista', 'mecanico',
-    'jornalista', 'farmaceutico', 'policial', 'bombeiro', 'piloto', 'chef', 'atleta', 'ator',
-    'cantor', 'dancarino', 'pintor', 'escultor', 'cineasta', 'produtor', 'vendedor', 'gerente',
-    'diretor', 'executivo', 'pedreiro', 'carpinteiro', 'encanador', 'marceneiro', 'serralheiro', 'padeiro',
-    'confeiteiro', 'copeiro', 'bartender', 'garcom', 'consultor', 'analista', 'tecnologo', 'recepcionista',
-    'secretario', 'officeboy', 'entregador', 'acupunturista', 'agricultor', 'artesao', 'astronomo', 'engenheiro-de-software',
-    'barista', 'biologo', 'bibliotecario', 'bilheteiro', 'bioquimico', 'carteiro', 'chauffeur', 'corretor',
-    'datilografista', 'decorador', 'diarista', 'diplomata', 'empresario', 'escritor', 'espião', 'esteticista',
-    'ferreiro', 'florista', 'funileiro', 'geologo', 'guarda', 'historiador', 'jardineiro', 'jogador',
-    'juiz', 'marinheiro', 'matematico', 'metalurgico', 'meteorologista', 'motorista', 'notario', 'nutricionista',
-    'oftalmologista', 'operador', 'orientador', 'paisagista', 'pastor', 'patologista', 'pedagogo', 'perito',
-    'personal', 'plastico', 'podologo', 'quimico', 'radiologista', 'recepcionista', 'relojoeiro', 'repórter',
-    'sociologo', 'soldador', 'tatuador', 'terapeuta', 'tesoureiro', 'topografo', 'treinador', 'urbanista',
-    'urologista', 'webdesigner', 'zelador'
-    ]
+    profissoes = {'facil': ['medico', 'piloto', 'chef', 'atleta', 'ator', 'cantor', 'pintor', 'gerente', 'diretor', 'padeiro', 
+                            'copeiro', 'garcom', 'artesao', 'barista', 'biologo', 'espião', 'geologo', 'guarda', 'jogador', 'juiz', 
+                            'notario', 'pastor', 'perito', 'quimico', 'zelador'], 
+                  'medio': ['engenheiro', 'advogado', 'arquiteto', 'professor', 'cientista', 'programador', 'designer', 'enfermeiro', 
+                            'dentista', 'veterinario', 'psicologo', 'contador', 'eletricista', 'mecanico', 'jornalista', 'policial', 
+                            'bombeiro', 'dancarino', 'escultor', 'cineasta', 'produtor', 'vendedor', 'executivo', 'pedreiro', 
+                            'carpinteiro', 'encanador', 'marceneiro', 'serralheiro', 'confeiteiro', 'bartender', 'consultor', 
+                            'analista', 'tecnologo', 'secretario', 'officeboy', 'entregador', 'agricultor', 'astronomo', 'bilheteiro', 
+                            'bioquimico', 'carteiro', 'chauffeur', 'corretor', 'decorador', 'diarista', 'diplomata', 'empresario', 
+                            'escritor', 'esteticista', 'ferreiro', 'florista', 'funileiro', 'historiador', 'jardineiro', 'marinheiro', 
+                            'matematico', 'metalurgico', 'motorista', 'operador', 'orientador', 'paisagista', 'patologista', 'pedagogo', 'personal', 'plastico', 'podologo', 'relojoeiro', 'repórter', 'sociologo', 'soldador', 'tatuador', 
+                            'terapeuta', 'tesoureiro', 'topografo', 'treinador', 'urbanista', 'urologista', 'webdesigner'], 
+                  'dificil': ['fisioterapeuta', 'farmaceutico', 'recepcionista', 'acupunturista', 'engenheiro-de-software', 'bibliotecario', 
+                              'datilografista', 'meteorologista', 'nutricionista', 'oftalmologista', 'radiologista', 'recepcionista']}
 
-    animais = [
-    'gato', 'cachorro', 'leao', 'elefante', 'tigre', 'urso', 'leopardo', 'girafa', 'camelo', 'hipopotamo',
-    'rinoceronte', 'zebra', 'macaco', 'gorila', 'orangotango', 'chimpanze', 'koala', 'canguru', 'coalas',
-    'golfinho', 'baleia', 'orca', 'tubarao', 'tartaruga', 'cobra', 'jacare', 'crocodilo', 'lagarto', 'lagartixa',
-    'iguana', 'sapo', 'ra', 'salamandra', 'lagosta', 'camarao', 'caranguejo', 'lagosta', 'polvo', 'lula',
-    'ourico', 'esquilo', 'raposa', 'guaxinim', 'panda', 'peixe', 'papagaio', 'ave', 'passaro', 'pombo',
-    'corvo', 'gaivota', 'avestruz', 'pavao', 'flamingo', 'pato', 'cisne', 'cisne', 'cavalo', 'vaca',
-    'ovelha', 'cabra', 'porco', 'javalis', 'coelho', 'camundongo', 'esquilo', 'morcego', 'raposa', 'furao',
-    'canguru', 'ornitorrinco', 'ganso', 'patos', 'pato', 'pombo', 'coruja', 'ganso', 'siri', 'camelo',
-    'avestruz', 'foca', 'morsa', 'pinguim', 'lontra', 'foca', 'leao-marinho', 'orca', 'tubarao', 'baleia',
-    'peixe-boi', 'tubarao', 'caracol', 'tarantula', 'lagarta', 'libelula', 'borboleta', 'aranha', 'abelha',
-    'formiga', 'besouro', 'mosquito', 'grilo', 'mosca', 'besouro', 'aranha', 'escorpiao', 'mosquito'
-    ]
+    animais = {'facil': ['gato', 'leao', 'tigre', 'urso', 'girafa', 'camelo', 'zebra', 'macaco', 'gorila', 'koala', 'canguru', 
+                         'coalas', 'baleia', 'orca', 'tubarao', 'cobra', 'jacare', 'lagarto', 'iguana', 'sapo', 'ra', 'lagosta', 
+                         'camarao', 'lagosta', 'polvo', 'lula', 'ourico', 'esquilo', 'raposa', 'panda', 'peixe', 'ave', 'passaro', 
+                         'pombo', 'corvo', 'gaivota', 'pavao', 'pato', 'cisne', 'cisne', 'cavalo', 'vaca', 'ovelha', 'cabra', 'porco', 
+                         'javalis', 'coelho', 'esquilo', 'morcego', 'raposa', 'furao', 'canguru', 'ganso', 'patos', 'pato', 'pombo', 
+                         'coruja', 'ganso', 'siri', 'camelo', 'foca', 'morsa', 'pinguim', 'lontra', 'foca', 'orca', 'tubarao', 'baleia', 
+                         'tubarao', 'caracol', 'lagarta', 'aranha', 'abelha', 'formiga', 'besouro', 'grilo', 'mosca', 'besouro', 'aranha'], 
+               'medio': ['cachorro', 'elefante', 'leopardo', 'hipopotamo', 'rinoceronte', 'orangotango', 'chimpanze', 'golfinho', 'tartaruga', 
+                         'crocodilo', 'lagartixa', 'salamandra', 'caranguejo', 'guaxinim', 'papagaio', 'avestruz', 'flamingo', 'camundongo', 
+                         'avestruz', 'peixe-boi', 'tarantula', 'libelula', 'borboleta', 'mosquito', 'escorpiao', 'mosquito'], 
+               'dificil': ['ornitorrinco', 'leao-marinho']}
 
-    paises = [
-    'afeganistao', 'albania', 'argelia', 'andorra', 'angola', 'antigua-e-barbuda', 'argentina', 'armenia', 'australia', 'austria',
-    'azerbaijao', 'bahamas', 'bahrein', 'bangladesh', 'barbados', 'belarus', 'belgica', 'belize', 'benin', 'butao',
-    'bolivia', 'bosnia-e-herzegovina', 'botsuana', 'brasil', 'brunei', 'bulgaria', 'burkina-faso', 'burundi', 'cabo-verde', 'camboja',
-    'camaroes', 'canada', 'republica-centro-africana', 'chade', 'chile', 'china', 'colombia', 'comores', 'republica-democratica-do-congo', 'republica-do-congo',
-    'costa-rica', 'costa-do-marfim', 'croacia', 'cuba', 'chipre', 'republica-checa', 'dinamarca', 'djibouti', 'dominica', 'republica-dominicana',
-    'timor-leste', 'equador', 'egito', 'el-salvador', 'guine-equatorial', 'eritreia', 'estonia', 'etiopia', 'fiji', 'finlandia',
-    'franca', 'gabao', 'gambia', 'georgia', 'alemanha', 'ghana', 'grecia', 'granada', 'guatemala', 'guine',
-    'guine-bissau', 'guiana', 'haiti', 'honduras', 'hungria', 'islandia', 'india', 'indonesia', 'ira', 'irao',
-    'iraque', 'irlanda', 'israel', 'italia', 'jamaica', 'japao', 'jordania', 'casaquistao', 'quenia', 'kiribati',
-    'kosovo', 'kuwait', 'quirguistao', 'laos', 'letonia', 'libano', 'lesoto', 'liberia', 'libia', 'liechtenstein',
-    'lituania', 'luxemburgo', 'macedonia', 'madagascar', 'malawi', 'malasia', 'maldivas', 'mali', 'malta', 'ilhas-marshall',
-    'mauritania', 'mauricia', 'mexico', 'micronesia', 'moldavia', 'monaco', 'mongolia', 'montenegro', 'marrocos', 'mocambique',
-    'mianmar', 'namibia', 'nauru', 'nepal', 'holanda', 'nova-zelandia', 'nicaragua', 'niger', 'nigeria', 'coreia-do-norte',
-    'noruega', 'oman', 'paquistao', 'palau', 'palestina', 'panama', 'papua-nova-guin', 'paraguai', 'peru', 'filipinas',
-    'polonia', 'portugal', 'qatar', 'romenia', 'russia', 'ruanda', 'sao-cristovao-e-nevis', 'santa-lucia', 'sao-vicente-e-granadinas', 'samoa',
-    'san-marino', 'sao-tome-e-principe', 'arabia-saudita', 'senegal', 'servia', 'seicheles', 'serra-leoa', 'singapura', 'eslovaquia', 'eslovenia',
-    'ilhas-salomao', 'somalia', 'africa-do-sul', 'coreia-do-sul', 'sudao-do-sul', 'espanha', 'sri-lanka', 'sudao', 'suriname', 'suazilandia',
-    'suecia', 'suica', 'siria', 'tajiquistao', 'tanzania', 'tailandia', 'togo', 'tonga', 'trindade-e-tobago', 'tunisia',
-    'turquia', 'turquemenistao', 'tuvalu', 'uganda', 'ucrania', 'emirados-arabes-unidos', 'reino-unido', 'estados-unidos', 'uruguai', 'uzbequistao',
-    'vanuatu', 'cidade-do-vaticano', 'venezuela', 'vietna', 'iemen', 'zambia', 'zimbabue'
-    ]
+    paises = {'facil': ['albania', 'argelia', 'andorra', 'angola', 'armenia', 'austria', 'bahamas', 'bahrein', 'belarus', 
+                        'belgica', 'belize', 'benin', 'butao', 'bolivia', 'brasil', 'brunei', 'burundi', 'camboja', 'canada', 
+                        'chade', 'chile', 'china', 'comores', 'croacia', 'cuba', 'chipre', 'equador', 'egito', 'estonia', 'etiopia',
+                          'fiji', 'franca', 'gabao', 'gambia', 'georgia', 'ghana', 'grecia', 'granada', 'guine', 'guiana', 'haiti', 
+                          'hungria', 'india', 'ira', 'irao', 'iraque', 'irlanda', 'israel', 'italia', 'jamaica', 'japao', 'quenia',
+                            'kosovo', 'kuwait', 'laos', 'letonia', 'libano', 'lesoto', 'liberia', 'libia', 'malawi', 'malasia', 'mali',
+                              'malta', 'mexico', 'monaco', 'mianmar', 'namibia', 'nauru', 'nepal', 'holanda', 'niger', 
+                              'nigeria', 'noruega', 'oman', 'palau', 'panama', 'peru', 'polonia', 'qatar', 'romenia', 
+                              'russia', 'ruanda', 'samoa', 'senegal', 'servia', 'somalia', 'espanha', 'sudao', 'suecia', 
+                              'suica', 'siria', 'togo', 'tonga', 'tunisia', 'turquia', 'tuvalu', 'uganda', 'ucrania', 
+                              'uruguai', 'vanuatu', 'vietna', 'iemen', 'zambia'], 
+              'medio': ['afeganistao', 'argentina', 'australia', 'azerbaijao', 'bangladesh', 'barbados', 'botsuana', 'bulgaria',
+                         'cabo-verde', 'camaroes', 'colombia', 'costa-rica', 'dinamarca', 'djibouti', 'dominica', 'timor-leste',
+                           'el-salvador', 'eritreia', 'finlandia', 'alemanha', 'guatemala', 'honduras', 'islandia', 'indonesia',
+                             'jordania', 'casaquistao', 'kiribati', 'quirguistao', 'lituania', 'luxemburgo', 'macedonia', 
+                             'madagascar', 'maldivas', 'mauritania', 'mauricia', 'micronesia', 'moldavia', 'mongolia', 
+                             'montenegro', 'marrocos', 'mocambique', 'nicaragua', 'paquistao', 'palestina', 'paraguai', 
+                             'filipinas', 'portugal', 'santa-lucia', 'san-marino', 'seicheles', 'serra-leoa', 'singapura',
+                               'eslovaquia', 'eslovenia', 'sri-lanka', 'suriname', 'suazilandia', 'tajiquistao', 'tanzania',
+                                 'tailandia', 'reino-unido', 'uzbequistao', 'venezuela', 'zimbabue'], 
+              'dificil': ['antigua-e-barbuda', 'bosnia-e-herzegovina', 'burkina-faso', 'republica-centro-africana', 
+                          'republica-democratica-do-congo', 'republica-do-congo', 'costa-do-marfim', 'republica-checa',
+                            'republica-dominicana', 'guine-equatorial', 'guine-bissau', 'liechtenstein', 'ilhas-marshall',
+                              'nova-zelandia', 'coreia-do-norte', 'papua-nova-guin', 'sao-cristovao-e-nevis',
+                                'sao-vicente-e-granadinas', 'sao-tome-e-principe', 'arabia-saudita', 'ilhas-salomao',
+                                  'africa-do-sul', 'coreia-do-sul', 'sudao-do-sul', 'trindade-e-tobago', 'turquemenistao',
+                                    'emirados-arabes-unidos', 'estados-unidos', 'cidade-do-vaticano']}
 
-    cores = [
-    'vermelho', 'laranja', 'amarelo', 'verde', 'azul', 'anil', 'violeta', 'branco', 'preto', 'cinza',
-    'marrom', 'rosa', 'roxo', 'ciano', 'magenta', 'lima', 'teal', 'prata', 'ouro', 'bronze',
-    'marfim', 'navy', 'turquesa', 'vinho', 'oliva', 'salmão', 'lavanda', 'pêssego', 'ameixa', 'bege',
-    'azul-celeste', 'verde-floresta', 'vermelho-rubi', 'azul-safira', 'verde-esmeralda', 'amarelo-topázio', 'roxo-ametista', 'verde-jade', 'branco-pérola', 'preto-carvão'
-    ]
+    cores = {'facil': ['laranja', 'amarelo', 'verde', 'azul', 'anil', 'violeta', 'branco', 
+                       'preto', 'cinza', 'marrom', 'rosa', 'roxo', 'ciano', 'magenta', 
+                       'lima', 'teal', 'prata', 'ouro', 'bronze', 'marfim', 'navy', 
+                       'vinho', 'oliva', 'salmão', 'lavanda', 'pêssego', 'ameixa', 'bege'], 
+             'medio': ['vermelho', 'turquesa', 'azul-safira', 'verde-jade'], 
+             'dificil': ['azul-celeste', 'verde-floresta', 'vermelho-rubi', 'verde-esmeralda', 
+                         'amarelo-topázio', 'roxo-ametista', 'branco-pérola', 'preto-carvão']}
+    
+    objetos = {'facil': ['laranja', 'amarelo', 'verde', 'azul', 'anil', 'violeta', 'branco', 
+                         'preto', 'cinza', 'marrom', 'rosa', 'roxo', 'ciano', 'magenta', 
+                         'lima', 'teal', 'prata', 'ouro', 'bronze', 'marfim', 'navy', 
+                         'vinho', 'oliva', 'salmão', 'lavanda', 'pêssego', 'ameixa', 'bege'], 
+               'medio': ['vermelho', 'turquesa', 'azul-safira', 'verde-jade'], 
+               'dificil': ['azul-celeste', 'verde-floresta', 'vermelho-rubi', 'verde-esmeralda', 
+                           
+                           'amarelo-topázio', 'roxo-ametista', 'branco-pérola', 'preto-carvão']}
 
-    objetos = [
-    'cadeira', 'mesa', 'sofa', 'estante', 'televisao', 'geladeira', 'fogao', 'microondas', 'liquidificador', 'aspirador-de-po',
-    'computador', 'celular', 'tablet', 'teclado', 'mouse', 'fones-de-ouvido', 'carro', 'moto', 'bicicleta', 'aviao',
-    'navio', 'barco', 'helicoptero', 'carrinho-de-bebe', 'berco', 'luminaria', 'abajur', 'espelho', 'quadro', 'camera',
-    'relogio', 'culos-de-sol', 'mochila', 'bolsa', 'carteira', 'chave', 'livro', 'revista', 'jornal', 'caneta',
-    'lapis', 'caderno', 'agenda', 'folha-de-papel', 'pincel', 'tinta', 'escova-de-dente', 'pasta-de-dente', 'sabonete',
-    'toalha', 'pente', 'shampoo', 'condicionador', 'gel-de-cabelo', 'secador-de-cabelo', 'forno', 'panela', 'prato',
-    'copo', 'talher', 'garrafa', 'abridor-de-latas', 'sacola', 'caixa', 'chave-de-fenda', 'martelo', 'prego',
-    'parafuso', 'serrote', 'lixadeira', 'escada', 'cadeado', 'chaveiro', 'borracha', 'tesoura', 'agulha', 'linha',
-    'botao', 'fita', 'tesoura', 'vela', 'fita-adesiva', 'canivete', 'isqueiro', 'fita-metrica', 'balde', 'esponja',
-    'vassoura', 'rodo', 'papel-higienico', 'escova-de-lavar', 'detergente', 'desinfetante', 'vaso-sanitario', 'pia', 'torneira',
-    'abajur', 'mangueira', 'escorredor', 'cinzeiro', 'escada', 'ventilador', 'grampeador', 'binoculo', 'bussola', 'escorredor-de-pratos',
-    'lava-loucas', 'apontador', 'estojo', 'lupa', 'tear', 'maquina-de-escrever', 'maquina-de-lavar', 'maquina-de-coser', 'projetor', 'trena',
-    'radiador', 'cabide', 'varal', 'piscina', 'churrasqueira', 'guarda-chuva', 'cortina', 'porta', 'janela', 'quadro-branco',
-    'telefone', 'celular', 'camera', 'caixa-de-correio', 'lixeira', 'cama', 'almofada', 'cobertor', 'travesseiro', 'comoda',
-    'mesinha-de-cabeceira', 'criado-mudo', 'armario', 'guarda-roupa', 'cabideiro', 'sapateira', 'escrivaninha', 'cadeira', 'poltrona', 'sofa',
-    'tapete', 'espelho', 'porta-retratos', 'lustre', 'abajur', 'luminaria', 'abajur', 'porta-lapis', 'porta-trecos', 'estante',
-    'prateleira', 'cortina', 'tapete', 'porta-retratos', 'vaso-de-flores', 'jardineira', 'quadro-de-avisos', 'relogio-de-parede', 'comoda', 'espelho'
-    ]
-
-    if escolha == 'frutas':
-        return choice(frutas)
-    elif escolha == 'profissoes':
-        return choice(profissoes)
-    elif escolha == 'animais':
-        return choice(animais)
-    elif escolha == 'cores':
-        return choice(cores)
-    elif escolha == 'objetos':
-        return choice(objetos)
-    elif escolha == 'paises':
-        return choice(paises)
+    if assunto == 'frutas':
+        return choice(frutas[nivel])
+    elif assunto == 'profissoes':
+        return choice(profissoes[nivel])
+    elif assunto == 'animais':
+        return choice(animais[nivel])
+    elif assunto == 'cores':
+        return choice(cores[nivel])
+    elif assunto == 'objetos':
+        return choice(objetos[nivel])
+    elif assunto == 'paises':
+        return choice(paises[nivel])
 
 
 
