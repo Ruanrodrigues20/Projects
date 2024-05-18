@@ -113,18 +113,7 @@ def palavra(assunto, nivel):
                                  'guarda-roupa', 'escrivaninha', 'porta-retratos', 'porta-trecos', 
                                  'porta-retratos', 'vaso-de-flores', 'quadro-de-avisos', 'relogio-de-parede']}
 
-    if assunto == 'frutas':
-        return choice(frutas[nivel])
-    elif assunto == 'profissoes':
-        return choice(profissoes[nivel])
-    elif assunto == 'animais':
-        return choice(animais[nivel])
-    elif assunto == 'cores':
-        return choice(cores[nivel])
-    elif assunto == 'objetos':
-        return choice(objetos[nivel])
-    elif assunto == 'paises':
-        return choice(paises[nivel])
-
+    return choice(assunto[nível])
+        
 
 
