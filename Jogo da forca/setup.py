@@ -19,7 +19,7 @@ options = {
 # Crie o executável
 setup(
     name="forca",
-    version="1.0",
+    version="1.1",
     description="Meu programa",
     options=options,
     executables=executables
