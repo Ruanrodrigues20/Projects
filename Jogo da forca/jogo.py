@@ -100,15 +100,19 @@ def forca():
 def main():
     print('Jogo da forca'.center(60))
     print(' ')
-    a = '-'
-    print(f'Considere {a} como um espaço.')
+    print('Considere "-" como um espaço.')
     print(' ')
-    continuar = 's'
-    while continuar == 's':
+    while True:
         forca()
-        cont = input('Mais uma rodada [s/n]? ').lower()
-        continuar = cont[0]
+        continuar = input('Mais uma rodada [s/n]? ').lower()
         print(' ')
+        if continuar[0] == 'n': 
+            break
+        else:
+            print('Vamos lá pra mais uma rodada.')
+            print('Boa sorte!')
+            print(' ')
+            time.sleep(2)
 
     print('Até a próxima!')
     time.sleep(2)
