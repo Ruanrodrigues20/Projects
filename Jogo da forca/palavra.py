@@ -127,4 +127,3 @@ def palavra(assunto, nivel):
         return choice(paises[nivel])
 
 
-
